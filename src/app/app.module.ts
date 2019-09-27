@@ -6,24 +6,33 @@ import { GuiasComponent } from './pages/guias/guias.component';
 import { GuiaComponent } from './pages/guia/guia.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms'
-import {HttpClientModule} from '@angular/common/http'
-import { from } from 'rxjs';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { GuiasService } from './services/guias.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TablaComponent } from 'src/app/tabla/tabla.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GuiasComponent,
-    GuiaComponent
+    GuiaComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatTableModule,
+    CommonModule
   ],
   providers: [
     GuiasService

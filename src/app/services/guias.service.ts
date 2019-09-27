@@ -17,10 +17,6 @@ private url = 'http://localhost:8080/api/guias';
 
   }
 
-/*
-Metodos para manipulacion de objetos
-*/
-
 insertGuia(guia: GuiaModel) {
     return this.htpp.post(`${this.url}`, guia)
     .pipe(
