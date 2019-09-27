@@ -1,0 +1,43 @@
+<h1>Guia <small>Nombre de la guia</small></h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/guias" routerLinkActive="router-link-active">
+          Regresar
+       </button>
+    </div>
+</div>
+<hr>
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(g)" #g="ngForm">
+            <div class="form-group">
+                <input disabled="disabled" type="text" class="form-control" name="id" placeholder="Enter id" [(ngModel)]="guia.id">
+                <small class="form-text text-muted">Este campo es auto generado</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" placeholder="Enter title" required [(ngModel)]="guia.title">
+                <small class="form-text text-muted">Enter a Title</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="content" placeholder="Enter content" required [(ngModel)]="guia.content">
+                <small class="form-text text-muted">Enter a Content</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="created_at" placeholder="Enter created_at" required [(ngModel)]="guia.createdAt">
+                <small class="form-text text-muted">Enter a Created_at</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="updated_at" placeholder="Enter updated_at" required [(ngModel)]="guia.updatedAt">
+                <small class="form-text text-muted">Enter a Updated_at</small>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<hr>

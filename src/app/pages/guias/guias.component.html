@@ -1,0 +1,46 @@
+<h1>Listado de Guias</h1>
+<hr>
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/guia/nuevo" routerLinkActive="router-link-active" class="btn btn-primary">Agregar</button>
+    </div>
+</div>
+
+<table class="table table-dark mt-3 animated fadeIn faster" *ngIf="!cargando && guias.length>0">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">CONTENT</th>
+            <th scope="col">CREATED_AT</th>
+            <th scope="col">UPDATED_AT</th>
+            <th scope="col">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let guia of guias; let i=index">
+            <td>{{guia.id}}</td>
+            <td>{{guia.title}}</td>
+            <td>{{guia.content}}</td>
+            <td>{{guia.createdAt}}</td>
+            <td>{{guia.updatedAt}}</td>
+            <td>
+                <button class="btn btn-info mr-1" [routerLink]="['/guia',guia.id]">
+                   Editar
+               </button>
+                <button class="btn btn-danger mr-1" (click)="borrarHeroe(guia,i)">
+                Eliminar
+            </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="alert alert-warning text-center mt-3 animated fadeIn faster" *ngIf="!cargando && guias.length===0">
+    <h4 class="alert-heading">No hay registros</h4>
+</div>
+
+<div class="alert alert-info text-center mt-3 animated fadeIn faster" *ngIf="cargando">
+    <h4 class="alert-heading">Cargando</h4>
+    <p class="mb-o">Espere por favor...</p>
+</div>
