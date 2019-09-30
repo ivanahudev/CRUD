@@ -15,7 +15,6 @@ export class GuiasComponent implements OnInit {
   constructor(private guiaService: GuiasService) { }
 
   ngOnInit() {
-    this.cargando = true;
     this.guiaService.getGuias().subscribe(response => {
       console.log('servicio: ', response);
       this.guias = response;

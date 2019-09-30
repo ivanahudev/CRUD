@@ -27,7 +27,6 @@ export class TablaComponent implements OnInit {
     this.cargando = true;
     this.guia.getGuias().subscribe(respGuia => {
       console.log(respGuia);
-      console.log('hola');
       this.dataSource.data = respGuia;
       this.cargando = false;
     });
